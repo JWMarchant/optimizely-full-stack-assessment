@@ -4,6 +4,8 @@ var optimizelySDK = require('@optimizely/optimizely-sdk');
 var session = require('express-session');
 var pug = require('pug');
 
+var data = require('./data.json');
+
 var optimizelyClientInstance = optimizelySDK.createInstance({
 	datafile: {
 		uri: 'https://cdn.optimizely.com/datafiles/FkWqpqrKKyLRVU1JgNB7y3.json',
@@ -20,8 +22,10 @@ app.use(session({
 
 app.set('view engine', 'pug');
 
-app.get('/', function (req, res) {
-	res.render('index', {})
+app.get('/', function (req, res) {console.dir(data.products.length);
+	res.render('index', {
+		products: data.products
+	})
 });
 
 var server = app.listen(80, function () {

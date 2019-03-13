@@ -1,0 +1,88 @@
+{
+	"products": [
+		{
+			"id": 1,
+			"name": "White T-Shirt",
+			"category": "T-Shirt",
+			"price": 10.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 2,
+			"name": "Black T-Shirt",
+			"category": "T-Shirt",
+			"price": 12.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 3,
+			"name": "Green T-Shirt",
+			"category": "T-Shirt",
+			"price": 10.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 4,
+			"name": "Red Hoodie",
+			"category": "Hoodie",
+			"price": 16.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 5,
+			"name": "Black Hoodie",
+			"category": "Hoodie",
+			"price": 20.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 6,
+			"name": "Orange Hoodie",
+			"category": "Hoodie",
+			"price": 22.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 7,
+			"name": "Pink Hoodie",
+			"category": "Hoodie",
+			"price": 19.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 8,
+			"name": "Grey Vest",
+			"category": "Vest",
+			"price": 5.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 9,
+			"name": "White Vest",
+			"category": "Vest",
+			"price": 6.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 10,
+			"name": "Black Vest",
+			"category": "Vest",
+			"price": 5.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 10,
+			"name": "Green Vest",
+			"category": "Vest",
+			"price": 10.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		},
+		{
+			"id": 10,
+			"name": "Purple Vest",
+			"category": "Vest",
+			"price": 9.00,
+			"image": "https://www.polo-shirts.co.uk/images/res/Fruit_Of_The_Loom_Valueweight_TShirt_White-1316-919_300_300.jpg"
+		}
+	]
+}
