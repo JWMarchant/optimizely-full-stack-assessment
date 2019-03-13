@@ -1,0 +1,23 @@
+{
+  "name": "optimizely-full-stack-assessment",
+  "version": "1.0.0",
+  "description": "Assessment for Optimizely Full Stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWMarchant/optimizely-full-stack-assessment.git"
+  },
+  "author": "James Marchant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWMarchant/optimizely-full-stack-assessment/issues"
+  },
+  "homepage": "https://github.com/JWMarchant/optimizely-full-stack-assessment#readme",
+  "dependencies": {
+    "@optimizely/optimizely-sdk": "^3.0.1",
+    "express": "^4.16.4"
+  }
+}
