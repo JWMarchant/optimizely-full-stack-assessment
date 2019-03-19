@@ -16,6 +16,10 @@ if (environment === "dev") {
 	dataFileUrl = 'https://cdn.optimizely.com/datafiles/Wva8U2nhTJLA4vzWhve4yu.json';
 }
 
+/**
+ * Instantiate the Optimizely Client
+ * @param  	{function}	callbackReturn 	Function to return when finished
+ */
 var instantiateOptimizelyClient = function(callbackReturn) {
 	retrieveDataFile(function(err, dataFile) {
 		if (err) {
@@ -64,7 +68,11 @@ instantiateOptimizelyClient(function(err, result) {
 	});
 });
 
-
+/**
+ * Get the index of the site
+ * @param  	{object} 	req 	Request object
+ * @param  	{object} 	res 	Response object
+ */
 function getIndex(req, res) {
 	var data = JSON.parse(fs.readFileSync('./data.json'));
 	establishUserInformation(req);
@@ -128,7 +136,11 @@ function getIndex(req, res) {
 	})
 }
 
-
+/**
+ * Get the buy page
+ * @param  	{object} 	req 	Request object
+ * @param  	{object} 	res 	Response object
+ */
 function getBuy(req, res) {
 	establishUserInformation(req);
 
@@ -137,7 +149,10 @@ function getBuy(req, res) {
 	res.redirect('/');
 }
 
-
+/**
+ * Load the datafile
+ * @param  	{function}	callbackReturn 	Function to return when finished
+ */
 function retrieveDataFile(callbackReturn) {
 	https.get(dataFileUrl, (resp) => {
 		let data = '';
@@ -154,7 +169,10 @@ function retrieveDataFile(callbackReturn) {
 	});
 }
 
-
+/**
+ * Set the user information to be used by Optimizely
+ * @param  	{object} 	req 	Request object
+ */
 function establishUserInformation(req) {
 	userId = req.sessionID;
 	detector.detect(req.headers['user-agent']);
@@ -164,13 +182,19 @@ function establishUserInformation(req) {
 	};
 }
 
-
+/**
+ * Callback for activations of Optimizely experiments
+ * @param  	{object} 	activateObject 	Activation information
+ */
 function onActivateListener(activateObject) {
 	console.log('\x1b[36m%s\x1b[0m', "Experiment activated: " + activateObject.experiment.key);
 	console.log('\x1b[32m%s\x1b[0m', "Bucketed into variation: " + activateObject.variation.key);
 }
 
-
+/**
+ * Callback for tracking call for Optimizely
+ * @param  	{object} 	trackObject 	Tracking information
+ */
 function onTrackListener(trackObject) {
 	console.log('\x1b[31m%s\x1b[0m', "Tracking called: " + trackObject.eventKey);
 }
