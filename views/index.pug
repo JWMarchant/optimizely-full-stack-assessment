@@ -20,6 +20,17 @@ html(lang='en')
 	body
 		.container
 			h1 James' Sick Clothing
+			if (featured_products)
+				h2 Featured Products
+					.row
+						each val in featured_products
+							.col-md-4
+								h3=val.name
+								img(src=val.image)
+								h4 Price: £#{val.price}
+								div
+									a(type='button', href='/buy', class='btn btn-lg btn-primary') Buy!
+			h2 All Products
 			each group in groupBy3(products)
 				.row
 					each val in group

@@ -5,6 +5,7 @@
 			"name": "White T-Shirt",
 			"category": "T-Shirt",
 			"price": 10.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920shirt_guys_01.jpg?w=1272&h=920"
 		},
 		{
@@ -12,6 +13,7 @@
 			"name": "Black T-Shirt",
 			"category": "T-Shirt",
 			"price": 12.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920shirt_guys_01.jpg?w=1272&h=920"
 		},
 		{
@@ -19,6 +21,7 @@
 			"name": "Green T-Shirt",
 			"category": "T-Shirt",
 			"price": 10.00,
+			"featured": true,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920shirt_guys_01.jpg?w=1272&h=920"
 		},
 		{
@@ -26,6 +29,7 @@
 			"name": "Red Hoodie",
 			"category": "Hoodie",
 			"price": 16.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920hoody_guys_solid03.jpg?w=1272&h=920"
 		},
 		{
@@ -33,6 +37,7 @@
 			"name": "Black Hoodie",
 			"category": "Hoodie",
 			"price": 20.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920hoody_guys_solid03.jpg?w=1272&h=920"
 		},
 		{
@@ -40,6 +45,7 @@
 			"name": "Orange Hoodie",
 			"category": "Hoodie",
 			"price": 22.00,
+			"featured": true,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920hoody_guys_solid03.jpg?w=1272&h=920"
 		},
 		{
@@ -47,6 +53,7 @@
 			"name": "Pink Hoodie",
 			"category": "Hoodie",
 			"price": 19.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920hoody_guys_solid03.jpg?w=1272&h=920"
 		},
 		{
@@ -54,6 +61,7 @@
 			"name": "Grey Vest",
 			"category": "Vest",
 			"price": 5.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920mens-triblend-tank_guys_01-white-1c.jpg?w=1272&h=920"
 		},
 		{
@@ -61,6 +69,7 @@
 			"name": "White Vest",
 			"category": "Vest",
 			"price": 6.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920mens-triblend-tank_guys_01-white-1c.jpg?w=1272&h=920"
 		},
 		{
@@ -68,6 +77,7 @@
 			"name": "Black Vest",
 			"category": "Vest",
 			"price": 5.00,
+			"featured": true,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920mens-triblend-tank_guys_01-white-1c.jpg?w=1272&h=920"
 		},
 		{
@@ -75,6 +85,7 @@
 			"name": "Green Vest",
 			"category": "Vest",
 			"price": 10.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920mens-triblend-tank_guys_01-white-1c.jpg?w=1272&h=920"
 		},
 		{
@@ -82,6 +93,7 @@
 			"name": "Purple Vest",
 			"category": "Vest",
 			"price": 9.00,
+			"featured": false,
 			"image": "https://cdn-images.threadless.com/threadless-shop/products/8223/1272x920mens-triblend-tank_guys_01-white-1c.jpg?w=1272&h=920"
 		}
 	]

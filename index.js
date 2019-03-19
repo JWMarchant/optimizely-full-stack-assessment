@@ -12,10 +12,14 @@ const fs = require('fs');
 
 var environment = process.argv[2] || 'production', dataFileUrl = 'https://cdn.optimizely.com/datafiles/FkWqpqrKKyLRVU1JgNB7y3.json', dataFileSyncTime = 1000 * 60, optimizelyClientInstance, userId, userAttributes = {};
 
+if (environment === "dev") {
+	dataFileUrl = 'https://cdn.optimizely.com/datafiles/Wva8U2nhTJLA4vzWhve4yu.json';
+}
+
 var instantiateOptimizelyClient = function(callbackReturn) {
 	retrieveDataFile(function(err, dataFile) {
 		if (err) {
-
+			console.error('Error in dataFile:', err);
 		} else {
 			optimizelyClientInstance = optimizelySDK.createInstance({
 				datafile: dataFile
@@ -51,6 +55,9 @@ app.get('/', function (req, res) {
 	var data = JSON.parse(fs.readFileSync('./data.json'));
 	establishUserInformation(req);
 
+	/*
+	START Price Sort Experiment
+	 */
 	var variation;
 	if (typeof req.query['force-price_sort_test'] !== 'undefined') {
 		if (optimizelyClientInstance.setForcedVariation('price_sort_test', userId, req.query['force-price_sort_test'])) {
@@ -81,9 +88,29 @@ app.get('/', function (req, res) {
 			return 0;
 		});
 	}
+	/*
+	END Price Sort Experiment
+	 */
+
+	/*
+	START Featured Products Feature
+	 */
+	var featuredProductsEnabled = optimizelyClientInstance.isFeatureEnabled('featured_products', userId, userAttributes), featured_products = null;
+	if (featuredProductsEnabled) {
+		featured_products = [];
+		data.products.forEach(function(product) {
+			if (product.featured) {
+				featured_products.push(product);
+			}
+		});
+	}
+	/*
+	END Featured Products Feature
+	 */
 
 	res.render('index', {
-		products: data.products
+		products: data.products,
+		featured_products: featured_products
 	})
 });
 
@@ -132,10 +159,11 @@ function establishUserInformation(req) {
 
 
 function onActivateListener(activateObject) {
-	console.log("Experiment activated", activateObject.experiment.key);
+	console.log('\x1b[36m%s\x1b[0m', "Experiment activated: " + activateObject.experiment.key);
+	console.log('\x1b[32m%s\x1b[0m', "Bucketed into variation: " + activateObject.variation.key);
 }
 
 
 function onTrackListener(trackObject) {
-	console.log("Tracking called", trackObject.eventKey);
+	console.log('\x1b[31m%s\x1b[0m', "Tracking called: " + trackObject.eventKey);
 }
