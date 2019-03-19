@@ -70,6 +70,22 @@ function getIndex(req, res) {
 	establishUserInformation(req);
 
 	/*
+	START Featured Products Feature
+	 */
+	var featuredProductsEnabled = optimizelyClientInstance.isFeatureEnabled('featured_products', userId, userAttributes), featured_products = null;
+	if (featuredProductsEnabled) {
+		featured_products = [];
+		data.products.forEach(function(product) {
+			if (product.featured) {
+				featured_products.push(product);
+			}
+		});
+	}
+	/*
+	END Featured Products Feature
+	 */
+
+	/*
 	START Price Sort Experiment
 	 */
 	var variation;
@@ -104,22 +120,6 @@ function getIndex(req, res) {
 	}
 	/*
 	END Price Sort Experiment
-	 */
-
-	/*
-	START Featured Products Feature
-	 */
-	var featuredProductsEnabled = optimizelyClientInstance.isFeatureEnabled('featured_products', userId, userAttributes), featured_products = null;
-	if (featuredProductsEnabled) {
-		featured_products = [];
-		data.products.forEach(function(product) {
-			if (product.featured) {
-				featured_products.push(product);
-			}
-		});
-	}
-	/*
-	END Featured Products Feature
 	 */
 
 	res.render('index', {
