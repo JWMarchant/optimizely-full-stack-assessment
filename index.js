@@ -51,7 +51,21 @@ app.use(session({
 
 app.set('view engine', 'pug');
 
-app.get('/', function (req, res) {
+app.get('/', getIndex);
+
+app.get('/buy', getBuy)
+
+instantiateOptimizelyClient(function(err, result) {
+	var server = app.listen(80, function () {
+		var host = server.address().address;
+		var port = server.address().port;
+
+		console.log('Server listening at http://%s:%s', host, port);
+	});
+});
+
+
+function getIndex(req, res) {
 	var data = JSON.parse(fs.readFileSync('./data.json'));
 	establishUserInformation(req);
 
@@ -112,24 +126,17 @@ app.get('/', function (req, res) {
 		products: data.products,
 		featured_products: featured_products
 	})
-});
+}
 
-app.get('/buy', function(req, res) {
+
+function getBuy(req, res) {
 	establishUserInformation(req);
 
 	optimizelyClientInstance.track('bought_product', userId, userAttributes);
 
 	res.redirect('/');
-})
+}
 
-instantiateOptimizelyClient(function(err, result) {
-	var server = app.listen(80, function () {
-		var host = server.address().address;
-		var port = server.address().port;
-
-		console.log('Server listening at http://%s:%s', host, port);
-	});
-});
 
 function retrieveDataFile(callbackReturn) {
 	https.get(dataFileUrl, (resp) => {
